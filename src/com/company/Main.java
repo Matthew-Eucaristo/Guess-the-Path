@@ -14,6 +14,7 @@ public class Main {
         mainMenuFrame.setContentPane(new MainMenu().panelMain);
         mainMenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainMenuFrame.pack();
+        mainMenuFrame.setLocationRelativeTo(null);
 
         // Toggle starting menu
         mainMenuFrame.setVisible(true);
