@@ -27,4 +27,7 @@ public class Stage {
     private JButton submitButton;
     JPanel panelMain;
     private JLabel stageType;
+    private JLabel gambar;
+
+
 }
