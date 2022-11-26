@@ -9,6 +9,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class DijkstraAlgorithm {
+    /**
+     * With all due respect, we've taken this code from https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
+     * and improvised it so it integrates with our code.
+     * All credits belong to its rightful owner
+     */
 
     private final List<Vertex> nodes;
     private final List<Edge> edges;
