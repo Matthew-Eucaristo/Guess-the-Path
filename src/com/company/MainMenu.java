@@ -1,7 +1,6 @@
 package com.company;
 
 import javax.swing.*;
-import java.awt.event.WindowEvent;
 import java.util.Objects;
 
 public class MainMenu extends JFrame {
@@ -14,7 +13,7 @@ public class MainMenu extends JFrame {
         // Initializer
         setContentPane(panelMain);
         setTitle("Guess The path!");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setSize(450, 300);
         setLocationRelativeTo(null);

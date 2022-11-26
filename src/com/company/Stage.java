@@ -1,8 +1,13 @@
 package com.company;
 
+import com.company.algo.dijkstra.DijkstraAlgorithmChecker;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
@@ -12,12 +17,14 @@ public class Stage extends JFrame{
     JPanel panelMain;
     private JLabel stageType;
     private JLabel gambar;
+    // for randomly selecting the file name
+    private int randomImageFileName;
 
     public Stage(boolean visibility) {
         // for initialization
         setContentPane(panelMain);
         setTitle("Stage");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         pack();
         setSize(550,400);
         setLocationRelativeTo(null);
@@ -34,8 +41,8 @@ public class Stage extends JFrame{
 
         // set jlabel icon
         Random randomizer = new Random();
-        int randomImageFileName = randomizer.nextInt(Objects.requireNonNull(new File("src/com/company/soal/gambar").list()).length);
-        gambar.setIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png",randomImageFileName)));
+        randomImageFileName = randomizer.nextInt(Objects.requireNonNull(new File("src/com/company/soal/gambar").list()).length);
+        gambar.setIcon(new ImageIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png",randomImageFileName)).getImage().getScaledInstance(316,241, Image.SCALE_DEFAULT)));
 
         // clear text
         gambar.setText("");
@@ -43,19 +50,40 @@ public class Stage extends JFrame{
         // Listener
         submitButton.addActionListener(e -> {
             // Submit button
-            if (checkAnswer(textField1.getText().toLowerCase())) {
-                // correct
-                System.out.println("Correct!");
-            } else {
-                // incorrect
-                System.out.println("Incorrect!");
+            try {
+                if (checkAnswer(textField1.getText().toLowerCase())) {
+                    // correct
+                    System.out.println("Correct!");
+                } else {
+                    // incorrect
+                    System.out.println("Incorrect!");
+                }
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
         });
     }
 
-    private boolean checkAnswer(String answer) {
-        // TODO: 11/22/2022 Connect ke algorithm buat cek jawaban
-        return true;
+    private boolean checkAnswer(String answer) throws IOException {
+        String type = Main.stageTypeConnector;
+
+        switch (type) {
+            case "Breadth First Search":
+
+                break;
+            case "Depth First Search":
+                break;
+            case "Shortest Path":
+                // Implementing Dijkstra Algorithm here
+                DijkstraAlgorithmChecker checker = new DijkstraAlgorithmChecker(randomImageFileName);
+                return checker.getReturnValue(answer);
+            default:
+                System.out.println("Error, stage type not found!");
+        }
+
+        // for error case
+        System.out.println("ERROR, Checking answer failed");
+        return false;
     }
 
 
