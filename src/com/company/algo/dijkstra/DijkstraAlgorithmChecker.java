@@ -60,8 +60,8 @@ public class DijkstraAlgorithmChecker {
             addLane(
                     String.format("lane%d", i),
                     Integer.parseInt(listAwalan.get(i)),
-                    Integer.parseInt(listWeight.get(i)),
-                    Integer.parseInt(listAkhiran.get(i))
+                    Integer.parseInt(listAkhiran.get(i)),
+                    Integer.parseInt(listWeight.get(i))
             );
         }
 
@@ -91,7 +91,12 @@ public class DijkstraAlgorithmChecker {
 
     public boolean getReturnValue(String answer) {
         // value to check is in lowercase, no space between
-        return Objects.equals(returnValue.toLowerCase(), Arrays.toString(answer.split(" ")).toLowerCase());
+        StringBuilder sb = new StringBuilder();
+        for (String s :
+                answer.split(" ")) {
+            sb.append(s.toLowerCase());
+        }
+        return Objects.equals(returnValue.toLowerCase(), sb.toString());
     }
 
     private static void addLane(String laneId, int sourceLocNo, int destLocNo, int duration) {

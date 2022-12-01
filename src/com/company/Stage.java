@@ -26,7 +26,7 @@ public class Stage extends JFrame{
         setTitle("Stage");
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         pack();
-        setSize(550,400);
+        setSize(1000,800);
         setLocationRelativeTo(null);
         setVisible(visibility);
         addWindowListener(new java.awt.event.WindowAdapter(){
@@ -42,7 +42,8 @@ public class Stage extends JFrame{
         // set jlabel icon
         Random randomizer = new Random();
         randomImageFileName = randomizer.nextInt(Objects.requireNonNull(new File("src/com/company/soal/gambar").list()).length);
-        gambar.setIcon(new ImageIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png",randomImageFileName)).getImage().getScaledInstance(316,241, Image.SCALE_DEFAULT)));
+        gambar.setIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png", randomImageFileName)));
+//        gambar.setIcon(new ImageIcon("src/com/company/soal/gambar/1.png"));
 
         // clear text
         gambar.setText("");
