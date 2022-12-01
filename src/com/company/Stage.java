@@ -17,6 +17,8 @@ public class Stage extends JFrame{
     JPanel panelMain;
     private JLabel stageType;
     private JLabel gambar;
+    private JLabel scoreLabel;
+    private JLabel lifeLabel;
     // for randomly selecting the file name
     private int randomImageFileName;
 
@@ -29,6 +31,13 @@ public class Stage extends JFrame{
         setSize(1000,800);
         setLocationRelativeTo(null);
         setVisible(visibility);
+
+        // set score and health
+
+        // set background music
+
+
+        // init listener for submit
         addWindowListener(new java.awt.event.WindowAdapter(){
             @Override
             public void windowClosing(WindowEvent e) {
@@ -85,6 +94,10 @@ public class Stage extends JFrame{
         // for error case
         System.out.println("ERROR, Checking answer failed");
         return false;
+    }
+
+    public void music() {
+        A
     }
 
 
