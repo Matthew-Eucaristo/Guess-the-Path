@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.algo.dijkstra.DijkstraAlgorithmChecker;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -19,6 +20,7 @@ public class Stage extends JFrame{
     private JLabel gambar;
     private JLabel scoreLabel;
     private JLabel lifeLabel;
+    private int scoreGain; // score gain
     // for randomly selecting the file name
     private int randomImageFileName;
 
@@ -32,9 +34,10 @@ public class Stage extends JFrame{
         setLocationRelativeTo(null);
         setVisible(visibility);
 
-        // set score and health
-
-        // set background music
+        // set score
+        scoreGain = 5;
+        updateLife();
+        updateScore();
 
 
         // init listener for submit
@@ -52,7 +55,6 @@ public class Stage extends JFrame{
         Random randomizer = new Random();
         randomImageFileName = randomizer.nextInt(Objects.requireNonNull(new File("src/com/company/soal/gambar").list()).length);
         gambar.setIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png", randomImageFileName)));
-//        gambar.setIcon(new ImageIcon("src/com/company/soal/gambar/1.png"));
 
         // clear text
         gambar.setText("");
@@ -64,9 +66,16 @@ public class Stage extends JFrame{
                 if (checkAnswer(textField1.getText().toLowerCase())) {
                     // correct
                     System.out.println("Correct!");
+                    // score add
+                    Main.score += scoreGain;
+                    updateScore();
+
                 } else {
                     // incorrect
                     System.out.println("Incorrect!");
+                    // life subtract
+                    Main.life -= 1;
+                    updateLife();
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -74,6 +83,22 @@ public class Stage extends JFrame{
         });
     }
 
+    // helper function for updating
+    private void updateScore() {
+        scoreLabel.setText(String.format("%d", Main.score));
+    }
+
+    private void updateLife() {
+        lifeLabel.setText(String.format("%d", Main.life));
+
+        // check if dead
+        if (Main.life <= 0) {
+            setVisible(false);
+            Losing losing = new Losing(true);
+        }
+
+    }
+    // function for checking answer
     private boolean checkAnswer(String answer) throws IOException {
         String type = Main.stageTypeConnector;
 
@@ -94,10 +119,6 @@ public class Stage extends JFrame{
         // for error case
         System.out.println("ERROR, Checking answer failed");
         return false;
-    }
-
-    public void music() {
-        A
     }
 
 

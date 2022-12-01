@@ -11,7 +11,7 @@ public class DijkstraAlgorithmChecker {
     private static List<Edge> edges;
     // for file number we want to use
     private int fileNumber;
-    // for returning value of shortest path
+    // for returning value of the shortest path
     private String returnValue;
 
     // All the magic is done on the constructor
