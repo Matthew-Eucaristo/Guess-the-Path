@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.algo.Checker;
+import com.company.algo.bfs.BFSChecker;
+import com.company.algo.dfs.DFSChecker;
 import com.company.algo.dijkstra.DijkstraAlgorithmChecker;
 
 import javax.sound.sampled.*;
@@ -12,7 +15,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
-public class Stage extends JFrame{
+public class Stage extends JFrame {
     private JTextField textField1;
     private JButton submitButton;
     JPanel panelMain;
@@ -30,7 +33,7 @@ public class Stage extends JFrame{
         setTitle("Stage");
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         pack();
-        setSize(1000,800);
+        setSize(1000, 800);
         setLocationRelativeTo(null);
         setVisible(visibility);
 
@@ -41,7 +44,7 @@ public class Stage extends JFrame{
 
 
         // init listener for submit
-        addWindowListener(new java.awt.event.WindowAdapter(){
+        addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 Main.frameConnector.setVisible(true);
@@ -66,6 +69,10 @@ public class Stage extends JFrame{
                 if (checkAnswer(textField1.getText().toLowerCase())) {
                     // correct
                     System.out.println("Correct!");
+
+                    // close window / game stage when correct
+                    dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+
                     // score add
                     Main.score += scoreGain;
                     updateScore();
@@ -98,29 +105,34 @@ public class Stage extends JFrame{
         }
 
     }
+
     // function for checking answer
     private boolean checkAnswer(String answer) throws IOException {
         String type = Main.stageTypeConnector;
 
+        // abstract class for checker
+        Checker checker;
         switch (type) {
-            case "Breadth First Search":
-
-                break;
-            case "Depth First Search":
-                break;
-            case "Shortest Path":
-                // Implementing Dijkstra Algorithm here
-                DijkstraAlgorithmChecker checker = new DijkstraAlgorithmChecker(randomImageFileName);
+            case "Breadth First Search" -> {
+                checker = new BFSChecker(randomImageFileName);
                 return checker.getReturnValue(answer);
-            default:
-                System.out.println("Error, stage type not found!");
+            }
+            case "Depth First Search" -> {
+                checker = new DFSChecker(randomImageFileName);
+                return checker.getReturnValue(answer);
+            }
+            case "Shortest Path" -> {
+                // Implementing Dijkstra Algorithm here
+                checker = new DijkstraAlgorithmChecker(randomImageFileName);
+                return ((DijkstraAlgorithmChecker) checker).getReturnValue(answer);
+            }
+            default -> System.out.println("Error, stage type not found!");
         }
 
         // for error case
         System.out.println("ERROR, Checking answer failed");
         return false;
     }
-
 
 
 }

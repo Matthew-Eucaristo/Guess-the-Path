@@ -1,4 +1,4 @@
-package com.company.algo.dijkstra;
+package com.company.graph;
 
 import java.util.List;
 

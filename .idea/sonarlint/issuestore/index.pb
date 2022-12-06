@@ -3,12 +3,8 @@ B
 Guess the Path.iml,3\b\3b00a38905a925f4102ca8357a77d4cd9acba940
 w
 G.idea/sonarlint/issuestore/3/b/3b00a38905a925f4102ca8357a77d4cd9acba940,2\2\22ac47f99a10106152078f3bae436f8fd512df03
-W
-'src/com/company/algo/dijkstra/Edge.java,9\c\9ce414caac231d97cc4f2c04b30963bef4c914c5
 w
 G.idea/sonarlint/issuestore/2/2/22ac47f99a10106152078f3bae436f8fd512df03,8\b\8b0290eb297180be1afc961c7667cb6ac5e9fa99
-Y
-)src/com/company/algo/dijkstra/Vertex.java,6\9\69174b7411bc20e28464396a4da98e9c62334243
 R
 "src/com/company/soal/adjlist/2.txt,9\b\9bba0eab621e0bcbce026b94cc9e2a469277f006
 R
@@ -33,5 +29,5 @@ R
 "src/com/company/soal/adjlist/6.txt,9\7\975a73640bc47aa723434cf24b13d6fe276518b5
 R
 "src/com/company/soal/adjlist/5.txt,1\3\13c2d63e0fde866aa659eeedf50a0599fe382e10
-X
-(src/com/company/algo/dijkstra/Graph.java,5\f\5f2362b4db7a0153b98b5832c0230469a92f9f6a
+I
+src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab

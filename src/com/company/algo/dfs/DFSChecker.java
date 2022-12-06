@@ -1,4 +1,4 @@
-package com.company.algo.bfs;
+package com.company.algo.dfs;
 
 import com.company.algo.Checker;
 import com.company.graph.FileToGraph;
@@ -9,8 +9,9 @@ import com.company.graph.Vertex;
 import java.io.IOException;
 import java.util.List;
 
-public class BFSChecker extends Checker {
-    public BFSChecker(int fileNameNumber) throws IOException {
+public class DFSChecker extends Checker {
+
+    public DFSChecker(int fileNameNumber) throws IOException {
         // Get Graph
         FileToGraph graphReader = new FileToGraph(fileNameNumber);
         Graph graph = graphReader.getGraph();
@@ -18,10 +19,7 @@ public class BFSChecker extends Checker {
         edges = graphReader.getEdges();
         List<String> listVertex = graphReader.getListVertex();
 
-        // Instantiate BFS
-        BFS bfs = new BFS(graph);
-        System.out.println(bfs.getAnswer());
-        returnValue = bfs.getAnswer();
-
+        // Instantiate DFS
+        DFS dfs = new DFS(graph);
     }
 }

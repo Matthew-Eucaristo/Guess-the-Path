@@ -1,4 +1,4 @@
-package com.company.algo.dijkstra;
+package com.company.graph;
 
 public record Edge(String id, Vertex source, Vertex destination, int weight) {
     /**

@@ -1,8 +1,8 @@
-package com.company.algo;
+package com.company.graph;
 
-import com.company.algo.dijkstra.Edge;
-import com.company.algo.dijkstra.Graph;
-import com.company.algo.dijkstra.Vertex;
+import com.company.graph.Edge;
+import com.company.graph.Graph;
+import com.company.graph.Vertex;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,8 @@
 package com.company.algo.dijkstra;
+import com.company.graph.Edge;
+import com.company.graph.Graph;
+import com.company.graph.Vertex;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -10,7 +14,7 @@ import java.util.Set;
 
 public class DijkstraAlgorithm {
     /**
-     * With all due respect, we've taken this code from https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
+     * With all due respect, we've taken this code from <a href="https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html">...</a>
      * and improvised it so it integrates with our code.
      * All credits belong to its rightful owner
      */

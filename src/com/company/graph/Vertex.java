@@ -1,4 +1,4 @@
-package com.company.algo.dijkstra;
+package com.company.graph;
 
 public record Vertex(String id, String name) {
     /**
