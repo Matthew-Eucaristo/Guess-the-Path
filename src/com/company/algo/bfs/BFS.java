@@ -71,19 +71,19 @@ public class BFS {
         answer = sb.toString();
     }
 
-    private ArrayList<Integer> returnConnectedVertex(int vertexInNumber){
+    private ArrayList<Integer> returnConnectedVertex(int vertexInNumber) {
         // Get alphabetic representation of vertex
         char vertexInChar = alphabetUpperCase[vertexInNumber];
-        
+
         // Create arraylist to contain all connected vertex
         ArrayList<Integer> connectedVertex = new ArrayList<>();
-        
+
         // foreach to check from edges
-        for (Edge e:
-             edges) {
-            if (e.source().name().charAt(0) == vertexInChar ){
+        for (Edge e :
+                edges) {
+            if (e.source().name().charAt(0) == vertexInChar) {
                 connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.destination().name().charAt(0)));
-            } else if(e.destination().name().charAt(0) == vertexInChar){
+            } else if (e.destination().name().charAt(0) == vertexInChar) {
                 connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.source().name().charAt(0)));
             }
         }
