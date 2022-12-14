@@ -4,10 +4,7 @@ import com.company.graph.Edge;
 import com.company.graph.Graph;
 import com.company.graph.Vertex;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 import static com.company.algo.Checker.returnIndexInCharArray;
 
@@ -74,6 +71,9 @@ public class DFS {
                 connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.source().name().charAt(0)));
             }
         }
+
+        // sort the connectedVertex in reverse order to maintain alphabetical order
+        connectedVertex.sort(Collections.reverseOrder());
 
         // return the array
         return connectedVertex;
