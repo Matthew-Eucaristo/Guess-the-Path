@@ -11,6 +11,10 @@ import static com.company.algo.Checker.returnIndexInCharArray;
 public class DFS {
     private final List<Vertex> nodes;
     private final List<Edge> edges;
+
+    private final char[] alphabetUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    private String answer;
+
     public DFS(Graph graph) {
         // create a copy of the array so that we can operate on this array
         this.nodes = new ArrayList<>(graph.vertexes());
