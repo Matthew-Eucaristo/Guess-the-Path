@@ -48,7 +48,11 @@ public class Stage extends JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                // set main-menu visibility
                 Main.frameConnector.setVisible(true);
+
+                // life - 1 to counter cheater
+                Main.life--;
             }
         });
 
@@ -73,6 +77,9 @@ public class Stage extends JFrame {
 
                     // close window / game stage when correct
                     dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+
+                    // add life because the player wins fairly
+                    Main.life++;
 
                     // score add
                     Main.score += scoreGain;

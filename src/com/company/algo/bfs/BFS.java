@@ -40,22 +40,29 @@ public class BFS {
         // Looping start
         StringBuilder sb = new StringBuilder();
         int temp;
-        while (!queue.isEmpty()){
+        boolean first = true;
+        while (!queue.isEmpty()) {
             // dequeue and return value to temp
             temp = queue.poll();
 
-            // get value and add to sb
-            sb.append("%c".formatted(alphabetUpperCase[temp]));
+            if (!visited[temp] || first) {
+                // set first to false
+                first = false;
 
-            // get all connected vertex
-            List<Integer> connectedVertex = returnConnectedVertex(temp);
+                // set visited to true
+                visited[temp] = true;
+                // get value and add to sb
+                sb.append("%c".formatted(alphabetUpperCase[temp]));
 
-            for (Integer i :
-                 connectedVertex) {
-                // "i" is iterator for all vertex (in number) that is connected with temp
-                if (!visited[i]){
-                    visited[i] = true;
-                    queue.add(i);
+                // get all connected vertex
+                List<Integer> connectedVertex = returnConnectedVertex(temp);
+
+                for (Integer i :
+                        connectedVertex) {
+                    // "i" is iterator for all vertex (in number) that is connected with temp
+                    if (!visited[i]) {
+                        queue.add(i);
+                    }
                 }
             }
         }

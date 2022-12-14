@@ -23,6 +23,7 @@ public class MainMenu extends JFrame {
         setSize(450, 300);
         setLocationRelativeTo(null);
         setVisible(visibility);
+        getRootPane().setDefaultButton(playButton); // to set play button to default, so 'enter' will start at play
         // listener for window closing
         addWindowListener(new java.awt.event.WindowAdapter(){
             @Override
