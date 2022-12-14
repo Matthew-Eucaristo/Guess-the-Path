@@ -32,22 +32,30 @@ public class DFS {
         // Looping start
         StringBuilder sb = new StringBuilder();
         int temp;
-        while (!stack.isEmpty()){
+        boolean first = true;
+        while (!stack.isEmpty()) {
             // pop value and give to temp
             temp = stack.pop();
 
-            // get value and add to sb
-            sb.append("%c".formatted(alphabetUpperCase[temp]));
+            if (!visited[temp] || first) {
+                // set first to false
+                first = false;
 
-            // get all connected vertex
-            List<Integer> connectedVertex = returnConnectedVertex(temp);
+                // set visited to true
+                visited[temp] = true;
 
-            for (Integer i :
-                    connectedVertex) {
-                // "i" is iterator for all vertex (in number) that is connected with temp
-                if (!visited[i]){
-                    visited[i] = true;
-                    stack.add(i);
+                // get value and add to sb
+                sb.append("%c".formatted(alphabetUpperCase[temp]));
+
+                // get all connected vertex
+                List<Integer> connectedVertex = returnConnectedVertex(temp);
+
+                for (Integer i :
+                        connectedVertex) {
+                    // "i" is iterator for all vertex (in number) that is connected with temp
+                    if (!visited[i]) {
+                        stack.add(i);
+                    }
                 }
             }
         }
@@ -55,6 +63,7 @@ public class DFS {
         // return the answer
         answer = sb.toString();
     }
+
     private ArrayList<Integer> returnConnectedVertex(int vertexInNumber) {
         // Get alphabetic representation of vertex
         char vertexInChar = alphabetUpperCase[vertexInNumber];
