@@ -13,8 +13,6 @@ R
 "src/com/company/soal/adjlist/3.txt,f\e\fe46b335351d7ff205273cb65b35f58279e0fd47
 R
 "src/com/company/soal/adjlist/4.txt,1\a\1a4da2874f861a61185e7023601b9af87e5153f8
-w
-G.idea/sonarlint/issuestore/9/c/9ce414caac231d97cc4f2c04b30963bef4c914c5,b\0\b0992791110b7d1f9e2c84b64199cd925823396c
 R
 "src/com/company/soal/adjlist/0.txt,5\c\5c62c0fcd5a62255700f5bda6642291aa00363db
 w
@@ -31,3 +29,15 @@ R
 "src/com/company/soal/adjlist/5.txt,1\3\13c2d63e0fde866aa659eeedf50a0599fe382e10
 I
 src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab
+O
+src/com/company/graph/Edge.java,0\7\07c246692730c0cec356fb3268f5702fcde66675
+V
+&src/com/company/graph/FileToGraph.java,2\f\2f028cf8e79b6a526b40518a41e531c51db89231
+P
+ src/com/company/graph/Graph.java,c\0\c094d02e84526ab5aab257566f70b86eaca12a48
+X
+(src/com/company/algo/dfs/DFSChecker.java,1\d\1da32d48b2468d65b112417e3ac4052f7586e4b5
+Q
+!src/com/company/algo/dfs/DFS.java,9\b\9b76219d3e07f4a87047d63a6d85a1a8e171d3db
+Q
+!src/com/company/graph/Vertex.java,b\b\bb26de799596835aa73ed1ec01bceb21bebf05b0

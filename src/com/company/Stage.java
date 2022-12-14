@@ -111,20 +111,16 @@ public class Stage extends JFrame {
         String type = Main.stageTypeConnector;
 
         // abstract class for checker
-        Checker checker;
         switch (type) {
             case "Breadth First Search" -> {
-                checker = new BFSChecker(randomImageFileName);
-                return checker.getReturnValue(answer);
+                return (new BFSChecker(randomImageFileName)).getReturnValue(answer);
             }
             case "Depth First Search" -> {
-                checker = new DFSChecker(randomImageFileName);
-                return checker.getReturnValue(answer);
+                return (new DFSChecker(randomImageFileName)).getReturnValue(answer);
             }
             case "Shortest Path" -> {
                 // Implementing Dijkstra Algorithm here
-                checker = new DijkstraAlgorithmChecker(randomImageFileName);
-                return ((DijkstraAlgorithmChecker) checker).getReturnValue(answer);
+                return (new DijkstraAlgorithmChecker(randomImageFileName)).getReturnValue(answer);
             }
             default -> System.out.println("Error, stage type not found!");
         }

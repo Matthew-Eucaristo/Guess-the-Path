@@ -46,7 +46,7 @@ public class BFS {
             temp = queue.poll();
 
             // get value and add to sb
-            sb.append("%c ".formatted(alphabetUpperCase[temp]));
+            sb.append("%c".formatted(alphabetUpperCase[temp]));
 
             // get all connected vertex
             List<Integer> connectedVertex = returnConnectedVertex(temp);
@@ -76,9 +76,9 @@ public class BFS {
         for (Edge e:
              edges) {
             if (e.source().name().charAt(0) == vertexInChar ){
-                connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.source().name().charAt(0)));
-            } else if(e.destination().name().charAt(0) == vertexInChar){
                 connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.destination().name().charAt(0)));
+            } else if(e.destination().name().charAt(0) == vertexInChar){
+                connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.source().name().charAt(0)));
             }
         }
 
@@ -87,7 +87,8 @@ public class BFS {
     }
 
     public String getAnswer() {
-        return answer;
+        // trim and convert to lowercase
+        return answer.trim().toLowerCase();
     }
 
     public static int returnIndexInCharArray(char[] chars, char c){

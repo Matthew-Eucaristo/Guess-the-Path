@@ -2,9 +2,7 @@ package com.company.algo.bfs;
 
 import com.company.algo.Checker;
 import com.company.graph.FileToGraph;
-import com.company.graph.Edge;
 import com.company.graph.Graph;
-import com.company.graph.Vertex;
 
 import java.io.IOException;
 import java.util.List;
