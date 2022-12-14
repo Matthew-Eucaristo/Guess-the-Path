@@ -35,9 +35,5 @@ V
 &src/com/company/graph/FileToGraph.java,2\f\2f028cf8e79b6a526b40518a41e531c51db89231
 P
  src/com/company/graph/Graph.java,c\0\c094d02e84526ab5aab257566f70b86eaca12a48
-X
-(src/com/company/algo/dfs/DFSChecker.java,1\d\1da32d48b2468d65b112417e3ac4052f7586e4b5
-Q
-!src/com/company/algo/dfs/DFS.java,9\b\9b76219d3e07f4a87047d63a6d85a1a8e171d3db
 Q
 !src/com/company/graph/Vertex.java,b\b\bb26de799596835aa73ed1ec01bceb21bebf05b0

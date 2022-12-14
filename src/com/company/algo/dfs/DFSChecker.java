@@ -21,5 +21,7 @@ public class DFSChecker extends Checker {
 
         // Instantiate DFS
         DFS dfs = new DFS(graph);
+        System.out.println(dfs.getAnswer());
+        returnValue = dfs.getAnswer();
     }
 }

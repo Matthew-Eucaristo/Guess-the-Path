@@ -5,7 +5,11 @@ import com.company.graph.Graph;
 import com.company.graph.Vertex;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
+
+import static com.company.algo.Checker.returnIndexInCharArray;
 
 public class DFS {
     private final List<Vertex> nodes;
@@ -15,7 +19,68 @@ public class DFS {
         this.nodes = new ArrayList<>(graph.vertexes());
         this.edges = new ArrayList<>(graph.edges());
 
+        // create boolean visited array
+        boolean[] visited = new boolean[nodes.size()];
+
         // our code always use A as a starting point
+        visited[0] = true;
+
+        // Create queue
+        Stack<Integer> stack = new Stack<>();
+
+        // Add starting point to queue
+        stack.add(0);
+
+        // Here we use A is 0, B is 1 and so on
+        // Looping start
+        StringBuilder sb = new StringBuilder();
+        int temp;
+        while (!stack.isEmpty()){
+            // pop value and give to temp
+            temp = stack.pop();
+
+            // get value and add to sb
+            sb.append("%c".formatted(alphabetUpperCase[temp]));
+
+            // get all connected vertex
+            List<Integer> connectedVertex = returnConnectedVertex(temp);
+
+            for (Integer i :
+                    connectedVertex) {
+                // "i" is iterator for all vertex (in number) that is connected with temp
+                if (!visited[i]){
+                    visited[i] = true;
+                    stack.add(i);
+                }
+            }
+        }
+
+        // return the answer
+        answer = sb.toString();
+    }
+    private ArrayList<Integer> returnConnectedVertex(int vertexInNumber) {
+        // Get alphabetic representation of vertex
+        char vertexInChar = alphabetUpperCase[vertexInNumber];
+
+        // Create arraylist to contain all connected vertex
+        ArrayList<Integer> connectedVertex = new ArrayList<>();
+
+        // foreach to check from edges
+        for (Edge e :
+                edges) {
+            if (e.source().name().charAt(0) == vertexInChar) {
+                connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.destination().name().charAt(0)));
+            } else if (e.destination().name().charAt(0) == vertexInChar) {
+                connectedVertex.add(returnIndexInCharArray(alphabetUpperCase, e.source().name().charAt(0)));
+            }
+        }
+
+        // return the array
+        return connectedVertex;
     }
 
+    public String getAnswer() {
+        // trim and convert to lowercase
+        return answer.trim().toLowerCase();
+    }
 }

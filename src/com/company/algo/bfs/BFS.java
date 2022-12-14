@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import static com.company.algo.Checker.returnIndexInCharArray;
+
 public class BFS {
     /**
      * Code is inspired by <a href="https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/">...</a>
@@ -91,12 +93,4 @@ public class BFS {
         return answer.trim().toLowerCase();
     }
 
-    public static int returnIndexInCharArray(char[] chars, char c){
-        for (int i = 0; i < chars.length ; i++) {
-            if (chars[i] == c){
-                return i;
-            }
-        }
-        return -1;
-    }
 }

@@ -36,6 +36,7 @@ public class Stage extends JFrame {
         setSize(1000, 800);
         setLocationRelativeTo(null);
         setVisible(visibility);
+        getRootPane().setDefaultButton(submitButton); // to make submitButton default enter operation
 
         // set score
         scoreGain = 5;
