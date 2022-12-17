@@ -1,29 +1,37 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
 public class MainMenu extends JFrame {
     JPanel panelMain;
+    private JLabel backgroundImageLabel;
     private JButton playButton;
     private JButton exitButton;
     protected JComboBox comboBox1;
     public static Clip clip;
 
+
+
     public MainMenu(boolean visibility) {
         // Initializer
+        setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
-        setTitle("Guess The path!");
+        setTitle("Guess The Path!");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
-        setSize(450, 300);
+        setSize(800, 680); // still need this so that if minimized it's not ugly
         setLocationRelativeTo(null);
         setVisible(visibility);
         getRootPane().setDefaultButton(playButton); // to set play button to default, so 'enter' will start at play
+
         // listener for window closing
         addWindowListener(new java.awt.event.WindowAdapter(){
             @Override

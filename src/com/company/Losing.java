@@ -2,6 +2,7 @@ package com.company;
 
 import javax.sound.sampled.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -11,17 +12,26 @@ import java.io.IOException;
 
 public class Losing extends JFrame{
     private JPanel panelMain;
+    private JLabel backImageLabel;
     private Clip losingClip;
 
     public Losing(boolean visibility) {
         // for initialization
+        setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
         setTitle("You Absolute Loser GINI AJA GABISA!");
+        setUndecorated(true);
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         pack();
-        setSize(500, 500);
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // full screen
         setLocationRelativeTo(null);
         setVisible(visibility);
+
+        // for background
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        backImageLabel.setPreferredSize(screenSize);
+        backImageLabel.setHorizontalAlignment(JLabel.CENTER);
+        backImageLabel.setVerticalAlignment(JLabel.CENTER);
 
         // reset health and score
         Main.life = 3;

@@ -29,11 +29,14 @@ public class Stage extends JFrame {
 
     public Stage(boolean visibility) {
         // for initialization
+        setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
         setTitle("Stage");
+        setUndecorated(true); // so that there are no minimize close else to prevent cheating
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         pack();
-        setSize(1000, 800);
+        setSize(1000, 800); // so that when minimized it's not ugly
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // full screen
         setLocationRelativeTo(null);
         setVisible(visibility);
         getRootPane().setDefaultButton(submitButton); // to make submitButton default enter operation

@@ -1,14 +1,6 @@
 
 w
-G.idea/sonarlint/issuestore/3/b/3b00a38905a925f4102ca8357a77d4cd9acba940,2\2\22ac47f99a10106152078f3bae436f8fd512df03
-w
-G.idea/sonarlint/issuestore/2/2/22ac47f99a10106152078f3bae436f8fd512df03,8\b\8b0290eb297180be1afc961c7667cb6ac5e9fa99
-w
 G.idea/sonarlint/issuestore/8/b/8b0290eb297180be1afc961c7667cb6ac5e9fa99,1\5\15a904d6e6b17ca298bf792a273238ecb03a5440
-O
-src/com/company/graph/Edge.java,0\7\07c246692730c0cec356fb3268f5702fcde66675
-P
- src/com/company/graph/Graph.java,c\0\c094d02e84526ab5aab257566f70b86eaca12a48
 Q
 !src/com/company/graph/Vertex.java,b\b\bb26de799596835aa73ed1ec01bceb21bebf05b0
 R
@@ -27,17 +19,11 @@ R
 "src/com/company/soal/adjlist/7.txt,0\e\0e3d7fd797e5dbb524f20411d4a3d57d631977ea
 R
 "src/com/company/soal/adjlist/9.txt,7\9\7982d275e042b3a74c8300e27ae680587d3dd26f
-V
-&src/com/company/graph/FileToGraph.java,2\f\2f028cf8e79b6a526b40518a41e531c51db89231
 X
 (src/com/company/algo/dfs/DFSChecker.java,1\d\1da32d48b2468d65b112417e3ac4052f7586e4b5
 X
 (src/com/company/algo/bfs/BFSChecker.java,5\2\52b862d2de267fe671bbb401b679cc1e59a0cd94
 R
 "src/com/company/soal/adjlist/0.txt,5\c\5c62c0fcd5a62255700f5bda6642291aa00363db
-Q
-!src/com/company/algo/Checker.java,4\9\495fe80a00d7be1ac1e9e7930e691bc3af70ac2d
 R
 "src/com/company/soal/adjlist/8.txt,3\b\3bb2f3da372e2e6cd06204e38f2865dc04c3f63e
-I
-src/com/company/Main.java,4\a\4a831b10439099d44774d0ccc387e808deffaeab
