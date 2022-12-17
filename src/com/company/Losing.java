@@ -3,9 +3,7 @@ package com.company;
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -42,23 +40,30 @@ public class Losing extends JFrame{
         MainMenu.clip.stop();
         music();
 
+        // add mouse listener and key listener for closing this window
         panelMain.addComponentListener(new ComponentAdapter() {
         });
         panelMain.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                // for closing and returning to main menu
+                closeThisWindow(clipTimePosition);
+            }
+        });
+        panelMain.requestFocus(); // request focus
+        panelMain.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+            }
 
-                // stop lose music
-                losingClip.stop();
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER){
+                    closeThisWindow(clipTimePosition);
+                }
+            }
 
-                // resume music
-                MainMenu.clip.setMicrosecondPosition(clipTimePosition);
-                MainMenu.clip.start();
-
-                // go to main menu
-                Main.frameConnector.setVisible(true);
-                dispose();
+            @Override
+            public void keyReleased(KeyEvent e) {
             }
         });
 
@@ -84,5 +89,21 @@ public class Losing extends JFrame{
             throw new RuntimeException(e);
 
         }
+    }
+
+    private void closeThisWindow(long clipTimePosition){
+        // for closing and returning to main menu
+
+        // stop lose music
+        losingClip.stop();
+
+        // resume music
+        MainMenu.clip.setMicrosecondPosition(clipTimePosition);
+        MainMenu.clip.start();
+
+        // go to main menu
+        Main.frameConnector.setVisible(true);
+        dispose();
+
     }
 }

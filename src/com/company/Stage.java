@@ -60,7 +60,8 @@ public class Stage extends JFrame {
         });
 
         // set top-right text
-        stageType.setText(Main.stageTypeConnector);
+        stageType.setText(
+                Main.stageTypeConnector);
 
         // set jlabel icon
         Random randomizer = new Random();

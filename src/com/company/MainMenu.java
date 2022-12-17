@@ -25,6 +25,7 @@ public class MainMenu extends JFrame {
         setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
         setTitle("Guess The Path!");
+        setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();
         setSize(800, 680); // still need this so that if minimized it's not ugly
@@ -60,9 +61,10 @@ public class MainMenu extends JFrame {
     private void music() {
         /*
          The assets used for the music is
-         Different Heaven - Safe And Sound [NCS Release]
-         https://www.youtube.com/watch?v=13ARO0HDZsQ
-         All credits belong to its rightful owner.
+         Track: Lost Sky - Fearless pt.II (feat. Chris Linton) [NCS Release]
+Music provided by NoCopyrightSounds.
+Watch: https://youtu.be/S19UcWdOA-I
+Free Download / Stream: http://ncs.io/Fearless2YO
         */
         try {
             clip = AudioSystem.getClip();
