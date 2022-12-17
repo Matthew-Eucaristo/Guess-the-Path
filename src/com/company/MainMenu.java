@@ -24,7 +24,7 @@ public class MainMenu extends JFrame {
         // Initializer
         setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
-        setTitle("Guess The Path!");
+        setTitle("Guess The Path ?");
         setResizable(false);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         pack();

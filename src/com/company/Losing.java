@@ -17,7 +17,7 @@ public class Losing extends JFrame{
         // for initialization
         setIconImage(new ImageIcon("src/com/company/assets/images/logo.png").getImage()); // for icon
         setContentPane(panelMain);
-        setTitle("You Absolute Loser GINI AJA GABISA!");
+        setTitle("You Lose ! Try Again ?");
         setUndecorated(true);
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         pack();
