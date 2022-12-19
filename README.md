@@ -15,11 +15,11 @@ A simple game that is focused on Graph theory (BFS, DFS and Shortest Path).
 
 ## Authors
 
-- [@Matthew Eucaristo C14210070]()
-- [@Michael Christianson Ray C14210069]()
-- [@Farrel Christopher C14210245]()
-- [@Aloysius Juan C14210020]()
-- [@Felix Jonathan C14210050]()
+- [@Matthew Eucaristo C14210070]() Contributing on Base Code, OOP Concept and Dijkstra's Algorithm implementation
+- [@Michael Christianson Ray C14210069]() Contributing on BFS implementation
+- [@Farrel Christopher C14210245]() Contributing on DFS implementation
+- [@Aloysius Juan C14210020]() Contributing on UI and Program Flow
+- [@Felix Jonathan C14210050]() Contributing on UI and Program Flow
 
 
 ## Installation
