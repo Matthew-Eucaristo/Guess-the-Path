@@ -13,32 +13,31 @@ import java.util.Map;
 import java.util.Set;
 
 public class DijkstraAlgorithm {
-    /**
-     * With all due respect, we've taken this code from <a href="https://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html">...</a>
-     * and improvised it so it integrates with our code.
-     * All credits belong to its rightful owner
-     */
-
-    private final List<Vertex> nodes;
+    // Declaration
     private final List<Edge> edges;
-    private Set<Vertex> settledNodes = new HashSet<>();
+    private final Set<Vertex> settledNodes = new HashSet<>();
     private Set<Vertex> unSettledNodes;
     private Map<Vertex, Vertex> predecessors;
     private Map<Vertex, Integer> distance;
 
     public DijkstraAlgorithm(Graph graph) {
-        // create a copy of the array so that we can operate on this array
-        this.nodes = new ArrayList<>(graph.vertexes());
+        // Constructor for generating new array, so we can operate independently (not risking the original graph
         this.edges = new ArrayList<>(graph.edges());
     }
 
     public void execute(Vertex source) {
+        // Execute method to execute whole Dijkstra's Shortest Path Algorithm
         unSettledNodes = new HashSet<>();
         distance = new HashMap<>();
         predecessors = new HashMap<>();
+
+        // first time only, put source to array
         distance.put(source, 0);
         unSettledNodes.add(source);
+
+        // Loop while there are unsettled Nodes left
         while (!unSettledNodes.isEmpty()) {
+            // call all helper function
             Vertex node = getMinimum(unSettledNodes);
             settledNodes.add(node);
             unSettledNodes.remove(node);
@@ -47,7 +46,10 @@ public class DijkstraAlgorithm {
     }
 
     private void findMinimalDistances(Vertex node) {
+        // function to get the minimal distances while correcting the distance of the nodes
         List<Vertex> adjacentNodes = getNeighbors(node);
+
+        // loop all target vertex that is connected and fix each of the nodes
         for (Vertex target : adjacentNodes) {
             if (getShortestDistance(target) > getShortestDistance(node)
                     + getDistance(node, target)) {
@@ -61,6 +63,7 @@ public class DijkstraAlgorithm {
     }
 
     private int getDistance(Vertex node, Vertex target) {
+        // helper function to get the weight
         for (Edge edge : edges) {
             if (edge.source().equals(node)
                     && edge.destination().equals(target)) {
@@ -73,6 +76,7 @@ public class DijkstraAlgorithm {
     }
 
     private List<Vertex> getNeighbors(Vertex node) {
+        // helper function to get all neighbor (all vertex connected)
         List<Vertex> neighbors = new ArrayList<>();
         for (Edge edge : edges) {
             if (edge.source().equals(node)
@@ -84,6 +88,7 @@ public class DijkstraAlgorithm {
     }
 
     private Vertex getMinimum(Set<Vertex> vertexes) {
+        // helper function to get the minimum shortest distance vertex
         Vertex minimum = null;
         for (Vertex vertex : vertexes) {
             if (minimum == null) {
@@ -102,24 +107,21 @@ public class DijkstraAlgorithm {
     }
 
     private int getShortestDistance(Vertex destination) {
+        // helper function to get the distance and handling if it's null
         Integer d = distance.get(destination);
-        if (d == null) {
-            return Integer.MAX_VALUE;
-        } else {
-            return d;
-        }
+        if (d == null) return Integer.MAX_VALUE; else return d;
     }
 
-    /*
-     * This method returns the path from the source to the selected target and
-     * NULL if no path exists
-     */
-    public LinkedList<Vertex> getPath(Vertex target) {
-        LinkedList<Vertex> path = new LinkedList<Vertex>();
+    public List<Vertex> getPath(Vertex target) {
+        /*
+         * This method returns the path from the source to the selected target and
+         * NULL if no path exists
+         */
+        LinkedList<Vertex> path = new LinkedList<>();
         Vertex step = target;
         // check if a path exists
         if (predecessors.get(step) == null) {
-            return null;
+            return Collections.emptyList();
         }
         path.add(step);
         while (predecessors.get(step) != null) {

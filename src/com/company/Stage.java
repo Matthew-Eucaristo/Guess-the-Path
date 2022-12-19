@@ -1,16 +1,13 @@
 package com.company;
 
-import com.company.algo.Checker;
 import com.company.algo.bfs.BFSChecker;
 import com.company.algo.dfs.DFSChecker;
 import com.company.algo.dijkstra.DijkstraAlgorithmChecker;
 
-import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
@@ -23,9 +20,9 @@ public class Stage extends JFrame {
     private JLabel gambar;
     private JLabel scoreLabel;
     private JLabel lifeLabel;
-    private int scoreGain; // score gain
+    private final int scoreGain; // score gain
     // for randomly selecting the file name
-    private int randomImageFileName;
+    private final int randomImageFileName;
 
     public Stage(boolean visibility) {
         // for initialization
@@ -36,7 +33,7 @@ public class Stage extends JFrame {
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         pack();
         setSize(1000, 800); // so that when minimized it's not ugly
-        setExtendedState(JFrame.MAXIMIZED_BOTH); // full screen
+        setExtendedState(Frame.MAXIMIZED_BOTH); // full screen
         setLocationRelativeTo(null);
         setVisible(visibility);
         getRootPane().setDefaultButton(submitButton); // to make submitButton default enter operation
@@ -52,18 +49,18 @@ public class Stage extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 // set main-menu visibility
-                Main.frameConnector.setVisible(true);
+                Main.getFrameConnector().setVisible(true);
 
                 // life - 1 to counter cheater
-                Main.life--;
+                Main.setLife(Main.getLife() - 1);
             }
         });
 
         // set top-right text
         stageType.setText(
-                Main.stageTypeConnector);
+                Main.getStageTypeConnector());
 
-        // set jlabel icon
+        // set Jlabel icon
         Random randomizer = new Random();
         randomImageFileName = randomizer.nextInt(Objects.requireNonNull(new File("src/com/company/soal/gambar").list()).length);
         gambar.setIcon(new ImageIcon(String.format("src/com/company/soal/gambar/%d.png", randomImageFileName)));
@@ -77,41 +74,41 @@ public class Stage extends JFrame {
             try {
                 if (checkAnswer(textField1.getText().toLowerCase())) {
                     // correct
-                    System.out.println("Correct!");
+                    System.out.println("Status: Correct!");
 
                     // close window / game stage when correct
                     dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 
                     // add life because the player wins fairly
-                    Main.life++;
+                    Main.setLife(Main.getLife() + 1);
 
                     // score add
-                    Main.score += scoreGain;
+                    Main.setScore(Main.getScore() + scoreGain);
                     updateScore();
 
                 } else {
                     // incorrect
-                    System.out.println("Incorrect!");
+                    System.out.println("Status: Incorrect!");
                     // life subtract
-                    Main.life -= 1;
+                    Main.setLife(Main.getLife() - 1);
                     updateLife();
                 }
             } catch (IOException ex) {
-                throw new RuntimeException(ex);
+                System.out.println("Error at checking answer (should be at IO level)");
             }
         });
     }
 
     // helper function for updating
     private void updateScore() {
-        scoreLabel.setText(String.format("%d", Main.score));
+        scoreLabel.setText(String.format("%d", Main.getScore()));
     }
 
     private void updateLife() {
-        lifeLabel.setText(String.format("%d", Main.life));
+        lifeLabel.setText(String.format("%d", Main.getLife()));
 
         // check if dead
-        if (Main.life <= 0) {
+        if (Main.getLife() <= 0) {
             setVisible(false);
             Losing losing = new Losing(true);
         }
@@ -120,7 +117,7 @@ public class Stage extends JFrame {
 
     // function for checking answer
     private boolean checkAnswer(String answer) throws IOException {
-        String type = Main.stageTypeConnector;
+        String type = Main.getStageTypeConnector();
 
         // abstract class for checker
         switch (type) {

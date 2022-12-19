@@ -1,21 +1,18 @@
 package com.company;
 
-import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.WindowEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
 public class MainMenu extends JFrame {
     JPanel panelMain;
-    private JLabel backgroundImageLabel;
     private JButton playButton;
     private JButton exitButton;
     protected JComboBox comboBox1;
+    private JLabel backgroundImageLabel;
     public static Clip clip;
 
 
@@ -50,9 +47,9 @@ public class MainMenu extends JFrame {
             System.exit(0);
         });
         playButton.addActionListener(e -> {
-            Main.stageTypeConnector = Objects.requireNonNull(comboBox1.getSelectedItem()).toString();
+            Main.setStageTypeConnector(Objects.requireNonNull(comboBox1.getSelectedItem()).toString());
             Stage stage = new Stage(true);
-            Main.frameConnector.setVisible(false);
+            Main.getFrameConnector().setVisible(false);
 
         });
     }
@@ -76,7 +73,7 @@ Free Download / Stream: http://ncs.io/Fearless2YO
             clip.start();
         }
         catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error on Audio system");
         }
     }
 

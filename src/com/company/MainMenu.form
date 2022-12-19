@@ -17,6 +17,7 @@
         </constraints>
         <properties>
           <icon value="com/company/assets/images/Main Menu.png"/>
+          <labelFor value="97af"/>
           <text value=""/>
         </properties>
       </component>
@@ -27,6 +28,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-14277082"/>
+          <foreground color="-1"/>
           <model>
             <item value="Breadth First Search"/>
             <item value="Depth First Search"/>
@@ -42,6 +45,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-14277082"/>
+          <foreground color="-1970945"/>
           <text value="Play"/>
         </properties>
       </component>
@@ -53,6 +58,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-14277082"/>
+          <foreground color="-1970945"/>
           <text value="Exit"/>
         </properties>
       </component>

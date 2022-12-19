@@ -1,14 +1,8 @@
 
-w
-G.idea/sonarlint/issuestore/8/b/8b0290eb297180be1afc961c7667cb6ac5e9fa99,1\5\15a904d6e6b17ca298bf792a273238ecb03a5440
-Q
-!src/com/company/graph/Vertex.java,b\b\bb26de799596835aa73ed1ec01bceb21bebf05b0
 R
 "src/com/company/soal/adjlist/4.txt,1\a\1a4da2874f861a61185e7023601b9af87e5153f8
 R
 "src/com/company/soal/adjlist/2.txt,9\b\9bba0eab621e0bcbce026b94cc9e2a469277f006
-k
-;src/com/company/algo/dijkstra/DijkstraAlgorithmChecker.java,0\c\0cfe75eb4b6cc768979fcdfd084335d18bb6cfd3
 R
 "src/com/company/soal/adjlist/5.txt,1\3\13c2d63e0fde866aa659eeedf50a0599fe382e10
 R
@@ -19,11 +13,9 @@ R
 "src/com/company/soal/adjlist/7.txt,0\e\0e3d7fd797e5dbb524f20411d4a3d57d631977ea
 R
 "src/com/company/soal/adjlist/9.txt,7\9\7982d275e042b3a74c8300e27ae680587d3dd26f
-X
-(src/com/company/algo/dfs/DFSChecker.java,1\d\1da32d48b2468d65b112417e3ac4052f7586e4b5
-X
-(src/com/company/algo/bfs/BFSChecker.java,5\2\52b862d2de267fe671bbb401b679cc1e59a0cd94
 R
 "src/com/company/soal/adjlist/0.txt,5\c\5c62c0fcd5a62255700f5bda6642291aa00363db
 R
 "src/com/company/soal/adjlist/8.txt,3\b\3bb2f3da372e2e6cd06204e38f2865dc04c3f63e
+J
+src/com/company/Stage.form,0\3\03c01cac064bc09fcae331bdde44f27cc9862f4d

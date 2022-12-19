@@ -2,7 +2,6 @@ package com.company.algo.dijkstra;
 
 import com.company.algo.Checker;
 import com.company.graph.FileToGraph;
-import com.company.graph.Edge;
 import com.company.graph.Graph;
 import com.company.graph.Vertex;
 
@@ -24,7 +23,7 @@ public class DijkstraAlgorithmChecker extends Checker {
         dijkstra.execute(nodes.get(0)); // Start always first vertex
 
         // Setting up the destination
-        LinkedList<Vertex> path = dijkstra.getPath(nodes.get(listVertex.size() - 1)); // Destination always at last
+        LinkedList<Vertex> path = (LinkedList<Vertex>) dijkstra.getPath(nodes.get(listVertex.size() - 1)); // Destination always at last
 
         // Print for debugging purposes
         StringBuilder strBuild = new StringBuilder();

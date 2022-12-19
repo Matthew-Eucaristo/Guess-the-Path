@@ -2,12 +2,9 @@ package com.company.algo.dfs;
 
 import com.company.algo.Checker;
 import com.company.graph.FileToGraph;
-import com.company.graph.Edge;
 import com.company.graph.Graph;
-import com.company.graph.Vertex;
 
 import java.io.IOException;
-import java.util.List;
 
 public class DFSChecker extends Checker {
 
@@ -17,10 +14,11 @@ public class DFSChecker extends Checker {
         Graph graph = graphReader.getGraph();
         nodes = graphReader.getNodes();
         edges = graphReader.getEdges();
-        List<String> listVertex = graphReader.getListVertex();
+
 
         // Instantiate DFS
         DFS dfs = new DFS(graph);
+        System.out.println("--Depth First Search--");
         System.out.println(dfs.getAnswer());
         returnValue = dfs.getAnswer();
     }

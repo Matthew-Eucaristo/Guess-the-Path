@@ -21,19 +21,19 @@ public class Losing extends JFrame{
         setUndecorated(true);
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         pack();
-        setExtendedState(JFrame.MAXIMIZED_BOTH); // full screen
+        setExtendedState(Frame.MAXIMIZED_BOTH); // full screen
         setLocationRelativeTo(null);
         setVisible(visibility);
 
         // for background
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         backImageLabel.setPreferredSize(screenSize);
-        backImageLabel.setHorizontalAlignment(JLabel.CENTER);
-        backImageLabel.setVerticalAlignment(JLabel.CENTER);
+        backImageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        backImageLabel.setVerticalAlignment(SwingConstants.CENTER);
 
         // reset health and score
-        Main.life = 3;
-        Main.score = 0;
+        Main.setLife(3);
+        Main.setScore(0);
 
         // pause music and start losing music
         long clipTimePosition = MainMenu.clip.getMicrosecondPosition();
@@ -53,6 +53,7 @@ public class Losing extends JFrame{
         panelMain.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
+                // unused overridden method
             }
 
             @Override
@@ -64,6 +65,7 @@ public class Losing extends JFrame{
 
             @Override
             public void keyReleased(KeyEvent e) {
+                // unused overridden method
             }
         });
 
@@ -71,7 +73,7 @@ public class Losing extends JFrame{
 
     private void music() {
         /*
-        The assets used for the msuic is
+        The assets used for the music is
         "Death of Kings" Kevin MacLeod (incompetech.com)
         Licensed under Creative Commons: By Attribution 4.0 License
         http://creativecommons.org/licenses/by/4.0/
@@ -86,8 +88,7 @@ public class Losing extends JFrame{
             gainControl.setValue(5f);
             losingClip.start();
         } catch (LineUnavailableException | UnsupportedAudioFileException | IOException e) {
-            throw new RuntimeException(e);
-
+            System.out.println("Error on Audio system");
         }
     }
 
@@ -102,7 +103,7 @@ public class Losing extends JFrame{
         MainMenu.clip.start();
 
         // go to main menu
-        Main.frameConnector.setVisible(true);
+        Main.getFrameConnector().setVisible(true);
         dispose();
 
     }
