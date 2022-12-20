@@ -30,5 +30,5 @@ We recommend to install this project using JetBrains's Intellij Java IDE.
 
 #### Why we make this ?
 
-Based on school Data Structure assignment. Also pure curiosity lol.
+Based on school's Data Structure assignment. Also pure curiosity lol.
 
