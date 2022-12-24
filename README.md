@@ -3,6 +3,10 @@
 
 A simple game that is focused on Graph theory (BFS, DFS and Shortest Path).
 
+# TL/DR? Want demo instead?
+
+[![Watch the video](https://img.youtube.com/vi/Swh8pPu8eoY/maxresdefault.jpg)](https://youtu.be/Swh8pPu8eoY)
+P.S. This is actually a link that redirects to YouTube.
 
 
 ## Features
@@ -23,7 +27,7 @@ A simple game that is focused on Graph theory (BFS, DFS and Shortest Path).
 
 
 ## Installation
-
+We recommend to use JDK 16 or newer.  
 We recommend to install this project using JetBrains's Intellij Java IDE.
 
 ## FAQ
