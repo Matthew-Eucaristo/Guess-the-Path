@@ -19,9 +19,9 @@ P.S. This is actually a link that redirects to YouTube.
 
 ## Authors
 
-- [@Matthew Eucaristo C14210070]() Contributing on Base Code, OOP Concept and Dijkstra's Algorithm implementation
-- [@Michael Christianson Ray C14210069]() Contributing on BFS implementation
-- [@Farrel Christopher C14210245]() Contributing on DFS implementation
+- [@Matthew Eucaristo C14210070](https://github.com/Matthew-Eucaristo) Contributing on Base Code, OOP Concept and Dijkstra's Algorithm implementation
+- [@Michael Christianson Ray C14210069](https://github.com/MammaMiaaaaa) Contributing on BFS implementation
+- [@Farrel Christopher C14210245](https://github.com/MyAccount704) Contributing on DFS implementation
 - [@Aloysius Juan C14210020]() Contributing on UI and Program Flow
 - [@Felix Jonathan C14210050]() Contributing on UI and Program Flow
 
