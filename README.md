@@ -1,7 +1,7 @@
 
 # Guess The Path
 
-A simple game that is focused on Graph theory (BFS, DFS and Shortest Path).
+A simple game that is focused on Graph theory (BFS, DFS and Shortest Path).  
 
 # TL/DR? Want demo instead?
 
@@ -30,9 +30,16 @@ P.S. This is actually a link that redirects to YouTube.
 We recommend to use JDK 16 or newer.  
 We recommend to install this project using JetBrains's Intellij Java IDE.
 
+## Contributing
+
+Contributions are welcome! If you have an idea for a new feature or improvement, feel free to submit a pull request or open an issue to discuss it.
+
 ## FAQ
 
 #### Why we make this ?
 
 Based on school's Data Structure assignment. Also pure curiosity lol.
 
+## License
+
+[MIT](LICENSE)
